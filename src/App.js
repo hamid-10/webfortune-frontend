@@ -3,7 +3,7 @@ import './App.css';
 import axios from "axios";
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 
 const EpigramText = () => {
 
@@ -34,16 +34,18 @@ function App() {
   return (
     <div>
       <HeaderComponent />
-      <header className='app-header'>
-        <div className="App">
-          <EpigramText />
-        </div>
-        <div className="mb-2 text-center position-absolute bottom-50 end-50">
-          <Button variant="primary" size="lg" onClick={refreshPage}>
-            Reload
-          </Button>
-        </div>
+      <header className='App-header'>
+          <div className="App fst-italic">
+            <EpigramText />
+          </div>
+          <div className='position-absolute top-50 start-50 translate-middle'>
+            <Button variant="primary" size="lg" onClick={refreshPage}>
+              Reload
+            </Button>
+          </div>
       </header>
+      <div className="mb-2 text-center">
+      </div>
       <FooterComponent />
     </div>
   );
